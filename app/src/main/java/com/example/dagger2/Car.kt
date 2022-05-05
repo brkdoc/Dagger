@@ -3,8 +3,8 @@ package com.example.dagger2
 import javax.inject.Inject
 
 class Car {
-    lateinit var wheels: Wheels
-    lateinit var engine: Engine
+    var wheels: Wheels
+    var engine: Engine
 
     @Inject
     constructor(wheels: Wheels,engine: Engine){
@@ -12,6 +12,7 @@ class Car {
         this.engine=engine
     }
     fun start(){
+        engine.start()
         println("driving...")
     }
 }
